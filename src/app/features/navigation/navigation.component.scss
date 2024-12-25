@@ -4,11 +4,13 @@
 
 .sidenav {
   width: 200px;
-  background-color: var(--mat-sys-primary-container);
+  border-radius: 0;
+  border-right: 1px solid var(--mat-sys-outline);
+  background-color: var(--mat-sys-surface);
 }
 
 .sidenav-title {
-  background-color: var(--mat-sys-primary-container);
+  background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-primary-container);
 }
 

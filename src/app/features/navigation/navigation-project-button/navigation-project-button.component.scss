@@ -1,1 +1,6 @@
-
+.button {
+  // Utilizado important pois icon-button-overrides não funcionou
+  // para cor da label.
+  // Futuramente, rever https://material.angular.io/components/button/styling.
+  color: var(--mat-sys-on-primary-container) !important;
+}

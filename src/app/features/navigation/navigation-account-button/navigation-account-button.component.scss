@@ -2,12 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: var(--mat-sys-secondary);
+}
 
-  // --size: 36px;
-  // height: var(--size);
-  // width: var(--size);
-  // border-radius: var(--size);
+.button {
+  color: var(--mat-sys-on-primary-container);
 }
 
 .icon {
