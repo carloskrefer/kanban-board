@@ -1,0 +1,10 @@
+@if (isHandset$ | async) {
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+}
+
