@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "controle-concreto": {
+    "kanban-board": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -32,7 +32,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/controle-concreto",
+            "outputPath": "dist/kanban-board",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -79,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "controle-concreto:build:production"
+              "buildTarget": "kanban-board:build:production"
             },
             "development": {
-              "buildTarget": "controle-concreto:build:development"
+              "buildTarget": "kanban-board:build:development"
             }
           },
           "defaultConfiguration": "development"
