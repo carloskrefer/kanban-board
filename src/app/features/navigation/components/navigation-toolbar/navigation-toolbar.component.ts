@@ -11,31 +11,31 @@ import { NavigationHamburgerComponent } from '../navigation-hamburger/navigation
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-navigation-toolbar',
-  imports: [
-    MatToolbarModule,
-    NavigationProjectButtonComponent,
-    NavigationAccountButtonComponent,
-    MatIconModule,
-    MatButtonModule,
-    NavigationHamburgerComponent
-  ],
-  standalone: true,
-  templateUrl: './navigation-toolbar.component.html',
-  styleUrl: './navigation-toolbar.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-navigation-toolbar',
+    imports: [
+        MatToolbarModule,
+        NavigationProjectButtonComponent,
+        NavigationAccountButtonComponent,
+        MatIconModule,
+        MatButtonModule,
+        NavigationHamburgerComponent
+    ],
+    standalone: true,
+    templateUrl: './navigation-toolbar.component.html',
+    styleUrl: './navigation-toolbar.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationToolbarComponent {
-  @Input(
-    // { required: true }
-  ) drawer!: MatDrawer;
+    @Input(
+        // { required: true }
+    ) drawer!: MatDrawer;
 
-  private breakpointObserver = inject(BreakpointObserver);
+    private breakpointObserver = inject(BreakpointObserver);
 
-  isHandset = toSignal(this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    ));
+    isHandset = toSignal(this.breakpointObserver.observe(Breakpoints.Handset)
+        .pipe(
+            map(result => result.matches),
+            shareReplay()
+        ));
 
 }

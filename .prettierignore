@@ -1,0 +1,30 @@
+# Ignorar dependências instaladas
+node_modules/
+
+# Ignorar a pasta de build
+dist/
+build/
+
+# Ignorar arquivos de configuração do Angular gerados
+.angular/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos do ambiente do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar coverage (se você estiver usando testes com cobertura)
+coverage/
+
+# Ignorar arquivos específicos
+*.min.js
+*.bundle.js
+*.map
+package-lock.json
+yarn.lock
+
+# Ignorar arquivos ou diretórios gerados por IDEs
+.idea/
+.vscode/

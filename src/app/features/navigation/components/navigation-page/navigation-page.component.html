@@ -1,25 +1,25 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="isHandset() ? 'dialog' : 'navigation'"
-    [mode]="isHandset() ? 'over' : 'side'" [opened]="isHandset() === false">
-    <mat-toolbar class="sidenav-title">Meu projeto</mat-toolbar>
-    <mat-nav-list>
-      <mat-list-item>
-        <mat-icon matListItemIcon fontIcon="list_alt" class="material-icons-outlined icon"></mat-icon>
-        <a matListItemTitle href="#">Backlog</a>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon matListItemIcon fontIcon="view_kanban" class="material-icons-outlined icon"></mat-icon>
-        <a matListItemTitle href="#">Board</a>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon matListItemIcon fontIcon="group" class="material-icons-outlined icon"></mat-icon>
-        <a matListItemTitle href="#">Users</a>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-navigation-toolbar></app-navigation-toolbar>
-    <!-- Add Content Here -->
-    <mat-spinner></mat-spinner>
-  </mat-sidenav-content>
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="isHandset() ? 'dialog' : 'navigation'"
+        [mode]="isHandset() ? 'over' : 'side'" [opened]="isHandset() === false">
+        <mat-toolbar class="sidenav-title">Meu projeto</mat-toolbar>
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon matListItemIcon fontIcon="list_alt" class="material-icons-outlined icon"></mat-icon>
+                <a matListItemTitle href="#">Backlog</a>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon fontIcon="view_kanban" class="material-icons-outlined icon"></mat-icon>
+                <a matListItemTitle href="#">Board</a>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListItemIcon fontIcon="group" class="material-icons-outlined icon"></mat-icon>
+                <a matListItemTitle href="#">Users</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-navigation-toolbar></app-navigation-toolbar>
+        <!-- Add Content Here -->
+        <mat-spinner></mat-spinner>
+    </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,19 +1,28 @@
 @use '@angular/material' as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 html {
-  // color-scheme: light dark;
-  color-scheme: light;
-  @include mat.theme((
-    color: mat.$violet-palette,
-    typography: Roboto,
-    density: 0
-  ));
+    // color-scheme: light dark;
+    color-scheme: light;
+    @include mat.theme((color: mat.$violet-palette,
+            typography: Roboto,
+            density: 0));
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
+.g-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
