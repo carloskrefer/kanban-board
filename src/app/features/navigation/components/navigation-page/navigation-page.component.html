@@ -1,8 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="isHandset() ? 'dialog' : 'navigation'"
+    [mode]="isHandset() ? 'over' : 'side'" [opened]="isHandset() === false">
     <mat-toolbar class="sidenav-title">Meu projeto</mat-toolbar>
     <mat-nav-list>
       <mat-list-item>
@@ -20,7 +18,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-navigation-toolbar [drawer]="drawer"></app-navigation-toolbar>
+    <app-navigation-toolbar></app-navigation-toolbar>
     <!-- Add Content Here -->
     <mat-spinner></mat-spinner>
   </mat-sidenav-content>

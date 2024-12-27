@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './features/navigation/navigation.component';
+import { NavigationPageComponent } from './features/navigation/components/navigation-page/navigation-page.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { NavigationComponent } from './features/navigation/navigation.component'
   imports: [
     RouterOutlet,
     MatSlideToggleModule,
-    NavigationComponent
+    NavigationPageComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

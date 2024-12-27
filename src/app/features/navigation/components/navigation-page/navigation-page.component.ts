@@ -1,20 +1,19 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject  } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { NavigationToolbarComponent } from './navigation-toolbar/navigation-toolbar.component';
+import { NavigationToolbarComponent } from '../navigation-toolbar/navigation-toolbar.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss',
+  selector: 'app-navigation-page',
+  templateUrl: './navigation-page.component.html',
+  styleUrl: './navigation-page.component.scss',
   standalone: true,
   imports: [
     MatToolbarModule,
@@ -23,17 +22,18 @@ import { NavigationToolbarComponent } from './navigation-toolbar/navigation-tool
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    AsyncPipe,
     NavigationToolbarComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavigationComponent {
+export class NavigationPageComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset = toSignal(this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
-    );
+    ));
+
+
 }

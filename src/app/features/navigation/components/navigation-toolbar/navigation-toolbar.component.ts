@@ -3,11 +3,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavigationAccountButtonComponent } from '../navigation-account-button/navigation-account-button.component';
 import { NavigationProjectButtonComponent } from '../navigation-project-button/navigation-project-button.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map, Observable, shareReplay } from 'rxjs';
+import { map, shareReplay } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDrawer } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { NavigationHamburgerComponent } from '../navigation-hamburger/navigation-hamburger.component';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-navigation-toolbar',
@@ -25,7 +26,16 @@ import { NavigationHamburgerComponent } from '../navigation-hamburger/navigation
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationToolbarComponent {
-  @Input({ required: true }) drawer!: MatDrawer;
+  @Input(
+    // { required: true }
+  ) drawer!: MatDrawer;
 
+  private breakpointObserver = inject(BreakpointObserver);
+
+  isHandset = toSignal(this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    ));
 
 }

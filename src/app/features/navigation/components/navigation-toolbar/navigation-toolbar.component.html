@@ -1,5 +1,7 @@
 <mat-toolbar class="toolbar">
-  <app-navigation-hamburger [drawer]="drawer"></app-navigation-hamburger>
+  @if (isHandset()) {
+    <app-navigation-hamburger></app-navigation-hamburger>
+  }
   <app-navigation-project-button></app-navigation-project-button>
   <app-navigation-account-button></app-navigation-account-button>
 </mat-toolbar>
