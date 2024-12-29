@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{ title() }}</h2>
+<mat-dialog-content>
+    <ng-content select="[mainContent]"></ng-content>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <ng-content select="[buttons]"></ng-content>
+    @if (closes()) {
+    <button mat-button [mat-dialog-close]="onClose()" cdkFocusInitial>{{ closeLabel() }}</button>
+    }
+</mat-dialog-actions>
